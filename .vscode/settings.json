@@ -3,5 +3,14 @@
     "https://json.schemastore.org/github-workflow.json": [
       ".github/workflows/*.{yml,yaml}"
     ]
+  },
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": ".*",
+        "isAsync": true,
+        "cmd": "yarn lint:fix"
+      }
+    ]
   }
 }

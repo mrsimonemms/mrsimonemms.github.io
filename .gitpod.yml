@@ -35,3 +35,5 @@ vscode:
     - waderyan.gitblame
     - Vue.volar
     - Nuxt.mdc
+    - esbenp.prettier-vscode
+    - emeraldwalk.RunOnSave
