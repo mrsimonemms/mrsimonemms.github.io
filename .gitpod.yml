@@ -12,11 +12,26 @@ tasks:
       gp sync-done pre-commit
 
       exit 0
-  - command: |
+
+  - name: App
+    env:
+      npm_config_yes: true
+      NUXT_TELEMETRY_DISABLED: 1
+    init: |
+      yarn
+    command: |
       gp sync-await setup
+
+      yarn dev
+
+ports:
+  - port: 3000
+    visibility: private
 
 vscode:
   extensions:
     - donjayamanne.git-extension-pack
     - EditorConfig.EditorConfig
     - waderyan.gitblame
+    - Vue.volar
+    - Nuxt.mdc

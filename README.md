@@ -1,22 +1,43 @@
-# New
+# Content v2 Minimal Starter
 
-<!-- toc -->
+Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
 
-* [Open in Gitpod](#open-in-gitpod)
-* [Open in devbox](#open-in-devbox)
+## Setup
 
-<!-- Regenerate with "pre-commit run -a markdown-toc" -->
+Make sure to install the dependencies:
 
-<!-- tocstop -->
+```bash
+# yarn
+yarn install
 
-A blank project for getting started. This is configured for [Gitpod](https://gitpod.io)
-and [devbox](https://www.jetpack.io/devbox).
+# npm
+npm install
 
-## Open in Gitpod
+# pnpm
+pnpm install
+```
 
-* [Open in Gitpod](https://gitpod.io/from-referrer/)
+## Development Server
 
-## Open in devbox
+Start the development server on [localhost:3000](http://localhost:3000)
 
-* `curl -fsSL https://get.jetpack.io/devbox | bash`
-* `devbox shell`
+```bash
+npm run dev
+```
+
+## Production
+
+Build the application for production:
+
+```bash
+npm run build
+```
+
+Locally preview production build:
+
+```bash
+npm run preview
+```
+
+Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment)
+for more information.

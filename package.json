@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "lint": "yarn lint:commit && yarn lint:js && yarn lint:prettier",
+    "lint:commit": "commitlint --to HEAD",
+    "lint:js": "eslint --ext \".ts,.vue\" --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check .",
+    "lint:fix": "prettier --write --list-different . && yarn lint:js --fix",
+    "generate": "nuxt generate",
+    "prepreview": "yarn generate",
+    "preview": "nuxt preview"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@nuxt/content": "^2.4.3",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "eslint": "^8.35.0",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "nuxt": "^3.2.2",
+    "prettier": "^2.8.4",
+    "typescript": "^4.9.5"
+  }
+}
