@@ -18,4 +18,10 @@ jobs:
         with:
           fetch-depth: 0 # fetch-depth is required
 
+      - uses: actions/setup-node@v3
+        with:
+          node-version: lts/*
+
+      - run: npm ci
+
       - uses: wagoid/commitlint-github-action@v5

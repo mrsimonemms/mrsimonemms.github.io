@@ -8,7 +8,9 @@
       "extensions": [
         "donjayamanne.git-extension-pack",
         "EditorConfig.EditorConfig",
-        "waderyan.gitblame"
+        "waderyan.gitblame",
+        "esbenp.prettier-vscode",
+        "svelte.svelte-vscode"
       ]
     }
   },

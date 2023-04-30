@@ -14,7 +14,7 @@ permissions:
   pull-requests: write
 on:
   schedule:
-    - cron: "0 2 * * 1" # Every Monday at 2am
+    - cron: '0 2 * * 1' # Every Monday at 2am
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -25,19 +25,19 @@ jobs:
           - add-paths: .
             body: Use this to merge the changes to this repository.
             branch: cruft/update
-            commit-message: "chore: accept new Cruft update"
+            commit-message: 'chore: accept new Cruft update'
             title: New updates detected with Cruft
           - add-paths: .cruft.json
             body: Use this to reject the changes in this repository.
             branch: cruft/reject
-            commit-message: "chore: reject new Cruft update"
+            commit-message: 'chore: reject new Cruft update'
             title: Reject new updates detected with Cruft
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
         with:
-          python-version: "3.10"
+          python-version: '3.10'
 
       - name: Install Cruft
         run: pip3 install cruft
