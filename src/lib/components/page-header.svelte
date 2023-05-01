@@ -1,5 +1,5 @@
 <script lang="ts">
-  export let title: string = 'Untitled Page';
+  export let title = 'Untitled Page';
 </script>
 
 <svelte:head>
