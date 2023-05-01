@@ -10,10 +10,6 @@
     exactMatch: boolean;
   }
 
-  const exactMatch = (link: string): boolean => {
-    return $page.route.id === link;
-  };
-
   const menuBar: IMenu[] = [
     {
       name: 'Home',
@@ -24,9 +20,6 @@
       name: 'Blog',
       link: '/blog',
       exactMatch: false,
-      // active: (link: string): boolean => {
-      //   return $page.route.id?.startsWith(link) ?? false;
-      // },
     },
     {
       name: 'Speaking',

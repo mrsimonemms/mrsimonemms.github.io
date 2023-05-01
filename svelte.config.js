@@ -1,6 +1,7 @@
 import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-static';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { getEntries } from './src/lib/blog.js';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,6 +23,9 @@ const config = {
     adapter: adapter({
       fallback: '404.html',
     }),
+    prerender: {
+      entries: getEntries(),
+    },
   },
 };
 
