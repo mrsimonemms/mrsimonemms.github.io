@@ -4,6 +4,4 @@
 
 <PageHeader title="Software Engineer, Technical Leader, Solutions Designer" />
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation22</p>
-<i class="mdi mdi-home" />
+sss

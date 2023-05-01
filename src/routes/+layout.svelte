@@ -1,13 +1,10 @@
 <script lang="ts">
   import Navbar from '../lib/components/navbar.svelte';
-  import PageHeader from '../lib/components/page-header.svelte';
   import '../app.scss';
 
   const subtitle = 'Software Engineer, Technical Leader, Solutions Designer';
   const currentYear = new Date().getUTCFullYear();
 </script>
-
-<PageHeader title={subtitle} />
 
 <section class="hero is-large">
   <div class="hero-head">
