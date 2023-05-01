@@ -9,3 +9,9 @@
 @import 'bulma/sass/layout/_all';
 
 @import '@mdi/font/scss/materialdesignicons';
+
+.site {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
