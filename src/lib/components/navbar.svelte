@@ -27,11 +27,6 @@
       exactMatch: true,
     },
     {
-      name: 'Testimonials',
-      link: '/testimonials',
-      exactMatch: true,
-    },
-    {
       name: 'Profile',
       link: '/profile',
       exactMatch: true,
