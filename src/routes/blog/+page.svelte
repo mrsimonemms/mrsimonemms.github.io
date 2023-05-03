@@ -4,14 +4,16 @@
   import { afterNavigate } from '$app/navigation';
   import PageHeader from '$lib/components/page-header.svelte';
   import BlogCard from '$lib/components/blog-card.svelte';
+  import PageTitle from '$lib/components/page-title.svelte';
 
   export let data: PageData;
 
   let filteredPosts = false;
   let { posts } = data;
+  let tag: string | null = null;
 
   afterNavigate(() => {
-    const tag = $page.url.searchParams.get('tag');
+    tag = $page.url.searchParams.get('tag');
 
     filteredPosts = tag !== null;
     posts = data.posts;
@@ -25,13 +27,20 @@
 <PageHeader title="Blog" />
 
 <div class="container mb-5">
-  <h1 class="is-size-1">Blog Posts</h1>
+  <div class="my-6">
+    <PageTitle addPadding={false}>Blog Posts</PageTitle>
 
-  {#if filteredPosts}
-    <div class="pb-2">
-      <a href="/blog" data-sveltekit-noscroll>Clear filters</a>
-    </div>
-  {/if}
+    {#if filteredPosts}
+      <span class="tag is-large">{tag}</span>
+
+      <a class="button pb-2" href="/blog" data-sveltekit-noscroll>
+        <span> Clear filters </span>
+        <span class="icon is-small">
+          <i class="mdi mdi-close" />
+        </span>
+      </a>
+    {/if}
+  </div>
 
   <div class="columns is-multiline">
     {#each posts as post, i}
