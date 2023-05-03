@@ -1,0 +1,48 @@
+diff --git a/node_modules/highlightjs-terraform/package.json b/node_modules/highlightjs-terraform/package.json
+index 0393b51..3bb54c3 100644
+--- a/node_modules/highlightjs-terraform/package.json
++++ b/node_modules/highlightjs-terraform/package.json
+@@ -2,12 +2,12 @@
+   "name": "highlightjs-terraform",
+   "version": "1.0.6",
+   "description": "highlight.js syntax definition for Ethereum's terraform language",
+-  "main": "terraform.js",
++  "main": "terraform.mjs",
+   "scripts": {
+     "test": "jasmine"
+   },
+   "files": [
+-    "terraform.js"
++    "terraform.mjs"
+   ],
+   "repository": {
+     "type": "git",
+diff --git a/node_modules/highlightjs-terraform/terraform.js b/node_modules/highlightjs-terraform/terraform.mjs
+similarity index 89%
+rename from node_modules/highlightjs-terraform/terraform.js
+rename to node_modules/highlightjs-terraform/terraform.mjs
+index 1874b79..7e6fee9 100644
+--- a/node_modules/highlightjs-terraform/terraform.js
++++ b/node_modules/highlightjs-terraform/terraform.mjs
+@@ -13,9 +13,7 @@
+  * Category: scripting
+  */
+
+-var module = module ? module : {};     // shim for browser use
+-
+-function hljsDefineTerraform(hljs) {
++export function hljsDefineTerraform(hljs) {
+ 	var NUMBERS = {
+ 		className: 'number',
+ 		begin: '\\b\\d+(\\.\\d+)?',
+@@ -80,8 +78,7 @@ return {
+ }
+ }
+
+-module.exports = function(hljs) {
++export default function(hljs) {
+     hljs.registerLanguage('terraform', hljsDefineTerraform);
+ };
+
+-module.exports.definer = hljsDefineTerraform;
+\ No newline at end of file

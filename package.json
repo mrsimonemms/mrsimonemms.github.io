@@ -9,7 +9,7 @@
     "dev": "vite dev",
     "format": "prettier --plugin-search-dir . --write .",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "postinstall": "cp -rf node_modules/@mdi/font/fonts ./static",
+    "postinstall": "cp -rf node_modules/@mdi/font/fonts ./static && patch-package",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -29,9 +29,12 @@
     "eslint-plugin-svelte": "^2.26.0",
     "front-matter": "^4.0.2",
     "glob": "^10.2.2",
+    "highlight.js": "^11.8.0",
+    "highlightjs-terraform": "git+https://github.com/highlightjs/highlightjs-terraform.git",
     "luxon": "^3.3.0",
     "marked": "^4.3.0",
     "marked-mangle": "^1.0.0",
+    "patch-package": "^7.0.0",
     "prettier": "^2.8.0",
     "prettier-plugin-svelte": "^2.8.1",
     "sass": "^1.62.1",
