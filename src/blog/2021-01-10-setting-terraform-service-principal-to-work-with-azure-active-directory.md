@@ -94,7 +94,7 @@ resource "azurerm_kubernetes_cluster" "k8s" {
     }
   }
 
-  # Additional configuratio - see Terraform docs for details
+  # Additional configuration - see Terraform docs for details
 }
 
 resource "azurerm_role_assignment" "admin" {

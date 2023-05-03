@@ -12,8 +12,16 @@
 
 @import '@mdi/font/scss/materialdesignicons';
 
+@import 'highlight.js/scss/base16/3024';
+
 .site {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+}
+
+.blog-page {
+  .content pre {
+    padding: 0;
+  }
 }

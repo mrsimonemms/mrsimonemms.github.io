@@ -1,6 +1,6 @@
 import type { PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
-import { parsePost } from '$lib/blog';
+import { parsePost, getNextAndPrev } from '$lib/blog';
 
 export const load: PageServerLoad = async ({ params }) => {
   const post = parsePost(
@@ -8,7 +8,10 @@ export const load: PageServerLoad = async ({ params }) => {
   );
 
   if (post !== null) {
-    return post;
+    return {
+      post,
+      ...getNextAndPrev(post),
+    };
   }
 
   throw error(404, 'Page not found');

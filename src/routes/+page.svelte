@@ -1,6 +1,6 @@
 <script lang="ts">
   import type { PageData } from './$types';
-  import Markdown from '$lib/components/markdown.svelte';
+  import markdown from '$lib/components/markdown';
   import PageHeader from '$lib/components/page-header.svelte';
   import { cv } from '../stores/cv';
   import { profile } from '../stores/profile';
@@ -96,7 +96,7 @@
 
 <HomepageSection title="Think I can help you?" expandOnSlot={false}>
   <div class="has-text-centered">
-    <button class="button is-large is-info is-outlined my-5">Hire me</button>
+    <a href="/contact" class="button is-large is-info is-outlined my-5">Hire me</a>
   </div>
 </HomepageSection>
 
@@ -120,7 +120,7 @@
               </div>
             </div>
             <div class="content">
-              <Markdown content={ref.reference} />
+              {@html markdown(ref.reference)}
             </div>
           </div>
         </div>

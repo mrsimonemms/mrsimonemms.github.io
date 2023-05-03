@@ -14,6 +14,23 @@ export function getEntries() {
 }
 
 /**
+ * @param {Post} post
+ * @returns {{next: Post | null, previous: Post | null}}
+ */
+export function getNextAndPrev(post) {
+  const allPosts = listPosts();
+
+  const postIndex = allPosts.findIndex(({ route }) => route === post.route);
+  const next = allPosts[postIndex + 1] ?? null;
+  const previous = allPosts[postIndex - 1] ?? null;
+
+  return {
+    next,
+    previous,
+  };
+}
+
+/**
  * @returns {Post[]}
  */
 export function listPosts() {
