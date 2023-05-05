@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { PageData } from './$types';
   import PageHeader from '$lib/components/page-header.svelte';
-  import { profile } from '../../../../../../stores/profile';
+  import { profile } from '$lib/stores/profile';
   import markdown from '$lib/components/markdown';
   import DateFormat from '$lib/components/date-format.svelte';
   import { DateTime } from 'luxon';
