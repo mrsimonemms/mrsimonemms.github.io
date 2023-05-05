@@ -2,8 +2,8 @@
   import type { PageData } from './$types';
   import markdown from '$lib/components/markdown';
   import PageHeader from '$lib/components/page-header.svelte';
-  import { cv } from '../stores/cv';
-  import { profile } from '../stores/profile';
+  import { cv } from '$lib/stores/cv';
+  import { profile } from '$lib/stores/profile';
   import BlogCard from '$lib/components/blog-card.svelte';
   import Gmap from '$lib/components/gmap.svelte';
   import HomepageSection from '$lib/components/homepage-section.svelte';
