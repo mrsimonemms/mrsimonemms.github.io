@@ -1,11 +1,12 @@
 ---
 image: /img/blog/parrot.jpg
 title: I am an ex-Podder
-credits: Photo by [Zdeněk Macháček](https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-excerpt: On Tuesday, my adventure at Gitpod came to an end. What next?
-tags: gitpod, work
+credits: >-
+  Photo by [Zdeněk
+  Macháček](https://unsplash.com/@zmachacek?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+excerpt: 'On Tuesday, my adventure at Gitpod came to an end. What next?'
+tags: 'gitpod, work'
 ---
-
 > Hey Simon, I'm sorry to be sending this. We've made the hard decision to reduce the size of the Gitpod
 > team and you are affected.
 
@@ -21,7 +22,7 @@ that ain't going to pay the mortgage, so here's some thoughts...
 
 ---
 
-I have about 15 years of experience and [I'm bloody good at my job](/testimonials). I don't want to be _Engineer
+I have about 15 years of experience and [I'm bloody good at my job](/#testimonials). I don't want to be _Engineer
 \#7,384_ at a company. I have been a technical leader at many places and want to go somewhere that would benefit
 from that experience.
 
@@ -65,7 +66,7 @@ money _IS_ the deciding factor - in that case, to quote
 And I'm not going to do a technical test. By all means, I'm happy to prove my credentials in a conversation, but
 technical tests are a fundamentally broken and flawed system. And asking someone with my [experience](/profile)
 is a waste of time (and fairly insulting). If you need to see I can code, you can look at my
-[GitHub](https://github.com/MrSimonEmms) or [testimonials from the people I've worked with](/testimonials).
+[GitHub](https://github.com/MrSimonEmms) or [testimonials from the people I've worked with](/#testimonials).
 
 Finally, the only absolute no-no. **NO GAMBLING COMPANIES**. Ever. They're a cancer on our society, preying on the
 most vulnerable people and who provide little-to-no value except to their shareholders. I don't want to go to sleep
@@ -76,3 +77,4 @@ at night knowing that my house is being paid for by people suffering with addict
 This is my ideal. I don't expect all of these to be met by my next role, but I want to get close. If you have
 something you think is suitable, please [put a time in my diary](https://diary.simonemms.com) so you can tell
 me about it.
+
