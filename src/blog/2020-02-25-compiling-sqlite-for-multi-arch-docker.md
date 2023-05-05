@@ -1,12 +1,17 @@
 ---
 image: /img/blog/devon-divine-Hzp-1ua8DVE-unsplash.jpg
 title: Compiling SQLite for Multi-Arch Docker
-credits: Photo by [Devon Divine](https://unsplash.com/@lightrisephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
-excerpt: Multi-arch containers are great, except when you have C/C++ bindings to deal with. SQLite is one of the more common packages so I'll show you how to massively speed up your build process.
-tags: kubernetes, docker, devops, containers
+credits: >-
+  Photo by [Devon
+  Divine](https://unsplash.com/@lightrisephotography?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText)
+excerpt: >-
+  Multi-arch containers are great, except when you have C/C++ bindings to deal
+  with. SQLite is one of the more common packages so I'll show you how to
+  massively speed up your build process.
+tags: 'kubernetes, docker, devops, containers'
 ---
 Recently, I wrote about [building Docker containers for different processor
-architectures](/2020-01-21-multi-arch-docker-container) in order to be able to run
+architectures](/blog/2020/01/21/multi-arch-docker-container) in order to be able to run
 containers on Raspberry Pis and similar. As in that article, that's very useful for
 being able to benefit from cheaper cloud space or speed up development for Internet of
 Things (IoT) devices.
