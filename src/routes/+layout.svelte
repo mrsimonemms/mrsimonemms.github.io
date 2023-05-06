@@ -1,5 +1,6 @@
 <script lang="ts">
   import Navbar from '../lib/components/navbar.svelte';
+  import { cv } from '$lib/stores/cv';
   import '../app.scss';
 
   const subtitle = 'Software Engineer, Technical Leader, Solutions Designer';
@@ -23,7 +24,18 @@
 
 <footer class="footer has-background-black-ter has-text-white has-text-centered">
   <div class="content">
-    <div>@todo</div>
+    {#each cv.basics.profiles as profile}
+      <a
+        class="has-tooltip-arrow has-tooltip-bottom"
+        href={profile.url}
+        target="_blank"
+        data-tooltip={profile.network}
+      >
+        <span class="icon is-large has-text-white mx-3">
+          <i class="mdi mdi-24px mdi-{profile.network.toLowerCase()}" />
+        </span>
+      </a>
+    {/each}
     <hr class="has-background-grey-dark" />
     <div class="is-size-7">
       &copy; {currentYear}
