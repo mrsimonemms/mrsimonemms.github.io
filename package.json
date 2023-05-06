@@ -2,14 +2,19 @@
   "name": "mrsimonemms.github.io",
   "version": "0.0.0",
   "private": true,
+  "description": "Software Engineer, Technical Leader, Solutions Designer in Telford, UK",
   "scripts": {
     "build": "vite build",
+    "build:rss": "node scripts/generate_rss_feed.js",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "copy:fonts": "cp -rf node_modules/@mdi/font/fonts ./static",
     "dev": "vite dev",
     "format": "prettier --plugin-search-dir . --write .",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
-    "postinstall": "cp -rf node_modules/@mdi/font/fonts ./static && patch-package",
+    "postinstall": "patch-package",
+    "prebuild": "npm run build:rss && npm run copy:fonts",
+    "predev": "npm run build:rss && npm run copy:fonts",
     "preview": "vite preview"
   },
   "devDependencies": {
@@ -44,7 +49,8 @@
     "tslib": "^2.4.1",
     "typescript": "^5.0.0",
     "vite": "^4.3.0",
-    "vite-plugin-full-reload": "^1.0.5"
+    "vite-plugin-full-reload": "^1.0.5",
+    "xml": "^1.0.1"
   },
   "type": "module"
 }
