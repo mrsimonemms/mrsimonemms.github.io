@@ -149,7 +149,7 @@
         <a
           href={company.url}
           target="_blank"
-          class="has-tooltip-arrow has-tooltip-bottom is-flex"
+          class="has-tooltip-arrow has-tooltip-bottom is-flex has-tooltip-hidden-touch"
           data-tooltip={company.name}
         >
           <img class="image is-64x64 mx-auto mb-5" src={company.src} alt={company.name} />
