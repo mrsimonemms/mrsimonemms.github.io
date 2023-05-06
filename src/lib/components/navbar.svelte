@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { afterNavigate } from '$app/navigation';
   import { page } from '$app/stores';
 
   let displayNav = false;
@@ -43,6 +44,10 @@
       exactMatch: true,
     },
   ];
+
+  afterNavigate(() => {
+    displayNav = false;
+  });
 </script>
 
 <nav class="navbar is-dark">
