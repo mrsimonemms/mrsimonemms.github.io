@@ -17,8 +17,14 @@ tasks:
   - command: |
       gp sync-await setup
 
+      npm ci
+
+      npm run dev
+
 vscode:
   extensions:
     - donjayamanne.git-extension-pack
     - EditorConfig.EditorConfig
     - waderyan.gitblame
+    - esbenp.prettier-vscode
+    - svelte.svelte-vscode
