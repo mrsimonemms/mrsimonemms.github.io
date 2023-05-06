@@ -9,9 +9,31 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
     <link rel="manifest" href="/favicons/site.webmanifest" />
 
+    <!-- Calendly integreation -->
+    <link
+      data-n-head="ssr"
+      rel="stylesheet"
+      href="https://assets.calendly.com/assets/external/widget.css"
+    />
+    <script
+      data-n-head="ssr"
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+    ></script>
+
     %sveltekit.head%
   </head>
   <body class="site" data-sveltekit-preload-data="hover">
+    <script type="text/javascript">
+      Calendly.initBadgeWidget({
+        url: 'https://calendly.com/simon-emms',
+        text: 'Schedule a time with me',
+        color: '#E91E63',
+        textColor: '#ffffff',
+        branding: false,
+      });
+    </script>
+
     <div style="display: contents">%sveltekit.body%</div>
   </body>
 </html>
