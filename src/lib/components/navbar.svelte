@@ -9,6 +9,7 @@
     link: string;
     icon?: string;
     exactMatch: boolean;
+    newWindow?: boolean;
   }
 
   const menuBar: IMenu[] = [
@@ -42,6 +43,7 @@
       link: '/cv.pdf',
       icon: 'mdi-download',
       exactMatch: true,
+      newWindow: true,
     },
   ];
 
@@ -76,6 +78,7 @@
         {#each menuBar as item}
           <a
             href={item.link}
+            target={item.newWindow ? '_blank' : null}
             class="navbar-item"
             class:is-active={item.exactMatch
               ? $page.route.id === item.link
