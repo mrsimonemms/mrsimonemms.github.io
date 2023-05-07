@@ -1,4 +1,63 @@
-export const cv = {
+export interface ICV {
+  basics: {
+    name: string;
+    label: string;
+    picture: string;
+    email: string;
+    phone: string;
+    summary?: string;
+    location: {
+      city: string;
+      countryCode: string;
+    };
+    profiles: {
+      network: string;
+      username: string;
+      url: string;
+    }[];
+  };
+  education: {
+    institution: string;
+    area: string;
+    startDate: Date;
+    endDate: Date;
+  }[];
+  interests: {
+    name: string;
+  }[];
+  projects: {
+    name: string;
+    publisher: string;
+    website?: string;
+    summary: string;
+    highlights: string[];
+    skills: string[];
+  }[];
+  references: {
+    name: string;
+    link: string;
+    img: string;
+    position: string;
+    company: string;
+    reference: string;
+  }[];
+  skills: {
+    name: string;
+    keywords: string[];
+  }[];
+  work: {
+    company: string;
+    position: string;
+    website?: string;
+    startDate?: Date;
+    endDate?: Date;
+    summary?: string;
+    skills: string[];
+    highlights?: string[];
+  }[];
+}
+
+export const cv: ICV = {
   basics: {
     name: 'Simon Emms',
     label: 'Software Engineer, DevOps, Solutions Designer',
@@ -59,9 +118,8 @@ export const cv = {
     {
       name: 'BrowserSpy',
       publisher: 'browserspy.io',
-      website: 'https://browserspy.io',
-      summary: `A testing tool that records all website events for replaying at a later date with a
-simple, two-line installation that works cross-platform.`,
+      summary:
+        'A testing tool that records all website events for replaying at a later date with a simple, two-line installation that works cross-platform.',
       highlights: [
         `Designed a scalable microservice architecture that is able to work with third-party APIs
 for authentication and issue tracking. The API is flexible enough to implement additional
@@ -71,7 +129,7 @@ large amounts of binary data so made use of cloud data buckets for optimal read/
 a full CI/CD suite, made a series of reusable CI functions to ensure terse configuration files.
 Maintained a separation between processes that needed to be real-time and ones that could be
 batch-processed later to reduce costs.`,
-        `Developed a recorder that is installed and configured in the user’s browser that intercepts
+        `Developed a recorder that is installed and configured in the user's browser that intercepts
 the relevant global DOM objects and pushes the events to a message queue for later processing into
 a playable timeline. Established metrics with automated tests to ensure that these adhere to
 appropriate performance criteria.`,
@@ -276,16 +334,16 @@ Simon is:
 
 I joined Gitpod as a senior software engineer in November of 2021. Simon was on my team, and adopted me as an onboarding buddy. He checked in with me daily, we talked about life, and he guided me while I learned the product and started my first couple assignments.
 
-I felt like an integrated member of the team and company because of his effort and patience. He mentored me where I knew I was weak (docker and kubernetes and Linux), where I thought I was stronger (git), and when I was out of my comfort zone (GCP). I’m a better technologist because of him.
+I felt like an integrated member of the team and company because of his effort and patience. He mentored me where I knew I was weak (docker and kubernetes and Linux), where I thought I was stronger (git), and when I was out of my comfort zone (GCP). I'm a better technologist because of him.
 
 A few months later, the company reorganized itself, and Simon moved to a different team. We had less interactions, but what I saw is that he was consistent with his new team. He checked in with his team daily, offered help selflessly, and served where he could add the most value. This was critical because the team was small, we were integrating and extending the product, and new hires joining his team needed help learning the product to become productive.
 
 How else is Simon fantastic? He gravitates towards ambassadorship. How? Here are a few examples:
-1. He was a constant member of Gitpod’s community, helping customers adopt Gitpod, learning about their needs, and incorporating that feedback into the installer. While doing so, he also built a strong relationship with the Community Team in Gitpod.
-2. Gitpod has an installer component (to replace unwieldy Helm charts), and he wrote the lion’s share of it. He shared how to use and extend it with the rest of product engineering, granting teams autonomy over the installation experience for their components. As part of the hand-over, he graciously offered office hours to aid in consulting.
+1. He was a constant member of Gitpod's community, helping customers adopt Gitpod, learning about their needs, and incorporating that feedback into the installer. While doing so, he also built a strong relationship with the Community Team in Gitpod.
+2. Gitpod has an installer component (to replace unwieldy Helm charts), and he wrote the lion's share of it. He shared how to use and extend it with the rest of product engineering, granting teams autonomy over the installation experience for their components. As part of the hand-over, he graciously offered office hours to aid in consulting.
 3. You can even catch Simon sharing with the ecosystem about his experience with the Gitpod installer at Rejekts in Valencia at https://simonemms.com/speaking/.
 
-If you’d like to schedule a live chat, book some time in his diary at https://calendly.com/simon-emms. You won’t regret it. 👋@ Simon. 😀`,
+If you'd like to schedule a live chat, book some time in his diary at https://calendly.com/simon-emms. You won't regret it. 👋@ Simon. 😀`,
     },
   ],
 
@@ -351,7 +409,7 @@ If you’d like to schedule a live chat, book some time in his diary at https://
       summary: `Provided DevOps leadership and consultancy services to help Foundry4 clients level-up their DevOps capability`,
       highlights: [
         'Worked with significant clients, including Ofgem, the British Red Cross and HM Planning Inspectorate, on a wide range of projects. The key arbiter of success was the ability to keep ahead of current trends in DevOps and being able to explain these to technical and business stakeholders.',
-        'Worked across a range of technologies and patterns, dependent upon the client’s skill set and experience. The role was split between architecture and planning, hands-on technical and stakeholder management.',
+        "Worked across a range of technologies and patterns, dependent upon the client's skill set and experience. The role was split between architecture and planning, hands-on technical and stakeholder management.",
         'Provided technical leadership, both amongst the Foundry4 team and client team, running structured and ad-hoc training sessions. These were focused on the new patterns and workflows being implemented as part of the programme the consultancy was engaged in delivering but often covered additional topics as necessary.',
         'Kubernetes and GitOps was a regular feature of the work delivered but included many different features of the cloud providers used. There was a strong focus on automation, self-service, reliability and monitoring.',
       ],
@@ -478,8 +536,8 @@ automated pension advice system.`,
 publish a comprehensive question schema. This schema would be ingested by the Angular front-end to
 dynamically generate the form, which could be defined on a per-broker basis.`,
         'Built a series of reusable Angular components to be used across the platform.',
-        `Developed a PDF report generator for the broker’s advice to be displayed with D3
-infographics. Worked closely with the firm’s pension advisers to ensure accurate and FCA compliant
+        `Developed a PDF report generator for the broker's advice to be displayed with D3
+infographics. Worked closely with the firm's pension advisers to ensure accurate and FCA compliant
 reports.`,
       ],
       skills: ['NodeJS', 'PHP', 'AngularJS', 'D3', 'Automation', 'MongoDB'],
