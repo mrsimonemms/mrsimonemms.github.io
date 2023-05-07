@@ -19,7 +19,7 @@
 
     <div class="columns is-multiline">
       {#each speaking as item}
-        <div class="column is-full">
+        <div class="column is-half">
           <div class="card">
             <div class="card-image">
               <div class="video-container">
