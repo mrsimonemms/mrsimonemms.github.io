@@ -407,10 +407,45 @@ If you'd like to schedule a live chat, book some time in his diary at https://ca
 
   work: [
     {
+      company: 'Gitpod',
+      position: 'Senior Engineer, Self-Hosted',
+      website: 'https://www.gitpod.io',
+      startDate: new Date(2021, 7, 1),
+      endDate: new Date(2023, 0, 1),
+      summary:
+        'Provided the technical leadership for the self-hosted product, working with users to successfully manage over 1,000 installations in the wild',
+      highlights: [
+        'Designed and built the Gitpod Installer. This replaced some very unweildly Helm charts with the objective of simplifying the installation experience for both Gitpod and self-hosted users alike. This was a very successful endeavour and launched Gitpod self-hosted',
+        "Extended the Gitpod Installer by using Replicated's Kubernetes-Off-The-Shelf (KOTS) to provide a one-click install of Gitpod",
+        'Worked with customers',
+        'Wrote and maintained installation guides for multiple different cloud-providers.',
+        'Mentored engineers',
+        'Wrote, submitted and delivered talks for various international conferences.',
+      ],
+      skills: [
+        'Kubernetes',
+        'Helm',
+        'Go',
+        'TypeScript',
+        'Docker',
+        'Mentoring',
+        'Remote Development',
+        'Developer Experience',
+        'Developer Relations',
+        'Amazon Web Services',
+        'Azure',
+        'Google Cloud Platform',
+        'Self-Hosted',
+        'Replicated',
+        'Technical Leadership',
+      ],
+    },
+    {
       company: 'Foundry4',
       position: 'Lead DevOps Consultant (contract)',
       website: 'https://foundry4.com/',
-      startDate: new Date(2020, 3, 1),
+      startDate: new Date(2020, 1, 1),
+      endDate: new Date(2021, 2, 1),
       summary: `Provided DevOps leadership and consultancy services to help Foundry4 clients level-up their DevOps capability`,
       highlights: [
         'Worked with significant clients, including Ofgem, the British Red Cross and HM Planning Inspectorate, on a wide range of projects. The key arbiter of success was the ability to keep ahead of current trends in DevOps and being able to explain these to technical and business stakeholders.',
