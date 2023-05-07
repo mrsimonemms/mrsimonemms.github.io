@@ -11,6 +11,18 @@
   export let summary: string | null = null;
   export let yearOnly: boolean = false;
 
+  function sort<T>(data: T[]): T[] {
+    return data.sort((a, b) => {
+      if (a < b) {
+        return -1;
+      }
+      if (b < a) {
+        return 1;
+      }
+      return 0;
+    });
+  }
+
   const format: Intl.DateTimeFormatOptions = {
     year: 'numeric',
     month: yearOnly ? undefined : 'short',
@@ -51,7 +63,7 @@
 
   {#if skills}
     <div class="tags are-medium mt-2">
-      {#each skills as skill}
+      {#each sort(skills) as skill}
         <span class="tag">{skill}</span>
       {/each}
     </div>
