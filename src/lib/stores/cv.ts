@@ -114,8 +114,12 @@ export const cv: ICV = {
       name: 'Gobblr',
       website: 'http://github.com/mrsimonemms/gobblr',
       summary: 'A tool for automatically ingesting data sets into your development stack',
-      highlights: [],
-      skills: [],
+      highlights: [
+        'Designed a service for the age-old problem of needing to ingest known data sets into development stack.',
+        'Can run as a web service as well as a CLI, the web service being able to be automatically executed prior to each integration test being run. This isolates the tests and data to help guarantee atomic tests.',
+        'Only interested in data ingestion rather than the table migration. This enables it to work with cross-platform ORMs out-of-the-box.',
+      ],
+      skills: ['Go', 'Databases', 'Docker'],
     },
     {
       name: 'BrowserSpy',
