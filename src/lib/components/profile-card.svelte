@@ -4,7 +4,7 @@
 
 <div class="card mb-5">
   <div class="card-content">
-    <p class="title is-6">{title}</p>
+    <p class="title is-3 has-text-weight-light">{title}</p>
 
     <div class="content">
       <slot />

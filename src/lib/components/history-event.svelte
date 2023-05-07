@@ -1,12 +1,11 @@
 <script lang="ts">
-  import { DateTime } from 'luxon';
   import DateFormat from './date-format.svelte';
 
   export let endDate: Date | null = null;
   export let highlights: string[] = [];
   export let link: string | null = null;
   export let position: string;
-  export let place: string;
+  export let place: string | null = null;
   export let skills: string[] = [];
   export let startDate: Date | null = null;
   export let summary: string | null = null;
@@ -20,7 +19,7 @@
 
 <div class="history-event">
   {#if startDate}
-    <div class="has-text-danger">
+    <div class="has-text-danger is-size-5">
       <DateFormat date={startDate} {format} />
       <span class="px-2">-</span>
       {#if endDate}
@@ -34,16 +33,20 @@
   {#if link}
     <a class="has-text-grey" href={link} target="_blank">
       <span class="has-text-black-ter has-text-weight-medium">{position}</span>
-      <span class="px-2">|</span>
-      <span>{place}</span>
+      {#if place}
+        <span class="px-2">|</span>
+        <span>{place}</span>
+      {/if}
       <sup class="icon is-small pl-2">
         <i class="mdi mdi-open-in-new" />
       </sup>
     </a>
   {:else}
     <span class="has-text-black-ter has-text-weight-medium">{position}</span>
-    <span class="px-2">|</span>
-    <span>{place}</span>
+    {#if place}
+      <span class="px-2">|</span>
+      <span>{place}</span>
+    {/if}
   {/if}
 
   {#if skills}

@@ -1,8 +1,6 @@
 <script lang="ts">
-  import BlogCard from '$lib/components/blog-card.svelte';
   import HistoryEvent from '$lib/components/history-event.svelte';
   import PageHeader from '$lib/components/page-header.svelte';
-  import PageTitle from '$lib/components/page-title.svelte';
   import ProfileCard from '$lib/components/profile-card.svelte';
 
   import { cv } from '$lib/stores/cv';
@@ -42,10 +40,6 @@
 <PageHeader title="Profile" />
 
 <div class="container my-5">
-  <div class="content">
-    <PageTitle>Profile</PageTitle>
-  </div>
-
   <div class="columns">
     <div class="column is-4">
       <ProfileCard title="Contact">
@@ -71,7 +65,7 @@
             {/if}
 
             <div class="column is-full">
-              <p class="subtitle is-6 has-text-danger">
+              <p class="subtitle is-5 has-text-danger">
                 {item.name}
               </p>
             </div>

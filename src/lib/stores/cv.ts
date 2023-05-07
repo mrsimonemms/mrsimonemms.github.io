@@ -27,7 +27,7 @@ export interface ICV {
   }[];
   projects: {
     name: string;
-    publisher: string;
+    publisher?: string;
     website?: string;
     summary: string;
     highlights: string[];
@@ -103,21 +103,22 @@ export const cv: ICV = {
   ],
 
   interests: [
-    {
-      name: 'Gardening',
-    },
-    {
-      name: 'Beekeeping',
-    },
-    {
-      name: 'Birdwatching',
-    },
+    { name: 'Gardening' },
+    { name: 'Beekeeping' },
+    { name: 'Birdwatching' },
+    { name: 'Woodworking' },
   ],
 
   projects: [
     {
+      name: 'Gobblr',
+      website: 'http://github.com/mrsimonemms/gobblr',
+      summary: 'A tool for automatically ingesting data sets into your development stack',
+      highlights: [],
+      skills: [],
+    },
+    {
       name: 'BrowserSpy',
-      publisher: 'browserspy.io',
       summary:
         'A testing tool that records all website events for replaying at a later date with a simple, two-line installation that works cross-platform.',
       highlights: [
