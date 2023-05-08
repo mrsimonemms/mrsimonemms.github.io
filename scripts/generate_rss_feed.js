@@ -6,7 +6,7 @@ import { fileURLToPath } from 'url';
 import * as blog from '../src/lib/blog.js';
 import pkg from '../package.json' assert { type: 'json' };
 
-const domain = 'https://simonemms.com';
+const domain = process.env.PUBLIC_DOMAIN_NAME;
 const feedName = 'rss.xml';
 
 const __filename = fileURLToPath(import.meta.url);

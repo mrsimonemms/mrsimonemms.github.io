@@ -60,7 +60,7 @@ export interface ICV {
 export const cv: ICV = {
   basics: {
     name: 'Simon Emms',
-    label: 'Software Engineer, DevOps, Solutions Designer',
+    label: 'Software Engineer, Technical Leader, Solutions Designer',
     picture: '/img/face-and-hat.jpg',
     email: 'simon@simonemms.com',
     phone: '+44 7736 650058',
