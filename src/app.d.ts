@@ -6,6 +6,11 @@ declare global {
     // interface Locals {}
     // interface PageData {}
     // interface Platform {}
+    interface MetaTags {
+      name?: string;
+      property?: string;
+      content: string;
+    }
   }
 }
 
