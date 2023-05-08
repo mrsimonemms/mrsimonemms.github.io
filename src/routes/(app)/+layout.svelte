@@ -36,10 +36,20 @@
       </a>
     {/each}
     <hr class="has-background-grey-dark" />
-    <div class="is-size-7">
+    <div class="is-size-6">
       &copy; {currentYear}
       <span class="px-2">|</span>
       Simon Emms
+      <p>
+        This site is open source.
+        <a
+          href="https://github.com/mrsimonemms/mrsimonemms.github.io/edit/main/README.md"
+          class="has-text-link-light"
+          target="_blank"
+        >
+          Improve this page.
+        </a>
+      </p>
     </div>
   </div>
 </footer>
