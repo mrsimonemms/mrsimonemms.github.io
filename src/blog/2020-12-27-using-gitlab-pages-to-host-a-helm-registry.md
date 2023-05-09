@@ -10,34 +10,36 @@ tags: helm, kubernetes, gitlab, devops
 > [gitlab.com/MrSimonEmms/helm-repo](https://gitlab.com/MrSimonEmms/helm-repo)
 
 Helm is a great way of sharing Kubernetes resources and making them reusable. The
-[documentation](https://helm.sh/docs/topics/registries) provides a way of creating a registry
-using a Docker image that you can host yourself. This provides lots of functionality, such as
-authentication and commands to interact with it. If you have your own infrastructure and need
-authentication, this is a great way to start. However, if you're publishing an open-source
-project, or you don't need authentication then managing infrastructure is an expense and overhead
-you don't need.
+[documentation](https://helm.sh/docs/topics/registries) provides a way of creating
+a registry using a Docker image that you can host yourself. This provides lots of
+functionality, such as authentication and commands to interact with it. If you have
+your own infrastructure and need authentication, this is a great way to start. However,
+if you're publishing an open-source project, or you don't need authentication then
+managing infrastructure is an expense and overhead you don't need.
 
 Enter [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/).
 
 ## What is GitLab Pages
 
-GitLab Pages is a way of publishing static files to the internet. It also allows you to use any URL
-you want and can be configured to use Let's Encrypt TLS certificates.
+GitLab Pages is a way of publishing static files to the internet. It also allows
+you to use any URL you want and can be configured to use Let's Encrypt TLS certificates.
 
-As a Helm Registry is simply an `index.yaml` file and a collection of `.tar.gz` files, this makes
-GitLab Pages a great option for hosting your registry.
+As a Helm Registry is simply an `index.yaml` file and a collection of `.tar.gz`
+files, this makes GitLab Pages a great option for hosting your registry.
 
 ## Setting Up Your Repo
 
 To set the repository up, you actually only need three files configured.
 
-> The `packages` directory is used in case you want to set up a website to read the `index.yaml`.
-> This is outside the scope of this post, but can be copied from my [Helm Registry source code](https://gitlab.com/MrSimonEmms/helm-repo/-/merge_requests/1)
+> The `packages` directory is used in case you want to set up a website to read
+> the `index.yaml`. This is outside the scope of this post, but can be copied
+> from my [Helm Registry source code](https://gitlab.com/MrSimonEmms/helm-repo/-/merge_requests/1)
 
 ### /packages/index.html
 
-This file is required for GitLab Pages to trigger building of the website. Even though it's not
-required for the Helm Registry, without it, this won't be published as a website.
+This file is required for GitLab Pages to trigger building of the website. Even
+though it's not required for the Helm Registry, without it, this won't be
+published as a website.
 
 ```html
 <!DOCTYPE html>
@@ -51,25 +53,30 @@ required for the Helm Registry, without it, this won't be published as a website
 </body>
 </html>
 ```
+
 ---
 
 ### /packages/index.yaml
 
-This is the contents of the Helm Registry. Eventually, this will contain a list of all the packages
-published to your registry.
+This is the contents of the Helm Registry. Eventually, this will contain a list
+of all the packages published to your registry.
 
 ```yaml
 apiVersion: v1
 entries: {}
 ```
+
 ---
 
 ### /.gitlab-ci.yml
 
-This file controls how the GitLab CI/CD builds the package. There are two tasks here:
- - the `add_helm_chart` task is run when a trigger is received. It downloads the Helm chart, adds
+This file controls how the GitLab CI/CD builds the package. There are two tasks
+here:
+ - the `add_helm_chart` task is run when a trigger is received. It downloads the
+  Helm chart, adds
 it to the `index.yaml` file and commits it to the repository
- - the `pages` task is run when a commit is pushed to the `master` branch. It publishes the
+ - the `pages` task is run when a commit is pushed to the `master` branch. It
+publishes the
 `packages` directory as your website.
 
 ```yaml
@@ -129,30 +136,32 @@ For this to work, various bits of configuration must be done:
 
 ### Configure Custom URL (optional)
 
-If you want to host this on a custom URL, you can add this in the Settings -> Pages section. Follow
-the instructions on screen to add the DNS records.
+If you want to host this on a custom URL, you can add this in the Settings ->
+Pages section. Follow the instructions on screen to add the DNS records.
 
 If you don't do this, you can use the default [gitlab.io](https://gitlab.io) URL.
 
 ### Create a Personal Access Token
 
-Create a [Personal Access Token](https://gitlab.com/-/profile/personal_access_tokens) with the
-`api` scope selected (from the documentation, you should also be able to use the `write_repository`
-scope although I've not tested it with that).
+Create a [Personal Access Token](https://gitlab.com/-/profile/personal_access_tokens)
+with the `api` scope selected (from the documentation, you should also be able
+to use the `write_repository` scope although I've not tested it with that).
 
 ### Add CI/CD Variables
 
 In the Settings -> CI/CD section for your repository, create some variables:
- - `GITLAB_TOKEN` - this is the value of the Personal Access Token above. This value should be both
-`protected` and `masked`
- - `HELM_REPO_URL` - this is the URL to host the repository on. This must be the fully qualified
-domain, including `https://` at the start. As an example, my value is `https://helm.simonemms.com`.
-This doesn't need to be `protected` or `masked` but won't hurt if they are.
+ - `GITLAB_TOKEN` - this is the value of the Personal Access Token above. This
+value should be both `protected` and `masked`
+ - `HELM_REPO_URL` - this is the URL to host the repository on. This must be the
+fully qualified domain, including `https://` at the start. As an example, my
+value is `https://helm.simonemms.com`. This doesn't need to be `protected` or
+`masked` but won't hurt if they are.
 
 ### Create a Pipeline Trigger
 
-In the Settings -> CI/CD section for your repository, create a Pipeline Trigger. A good description
-would be "Add Helm chart to registry", although the exact working is up to you.
+In the Settings -> CI/CD section for your repository, create a Pipeline Trigger.
+A good description would be "Add Helm chart to registry", although the exact
+working is up to you.
 
 Keep a note of both the project ID in the example (in the format
 `https://gitlab.com/api/v4/projects/xxxx/trigger/pipeline`) and the token.
@@ -161,11 +170,12 @@ Keep a note of both the project ID in the example (in the format
 
 ## Adding a Chart to your Registry
 
-> As this uses `git clone` to get the project, this can get any public repository or any private
-> repo that's owned by the same user/group as the Helm Registry.
+> As this uses `git clone` to get the project, this can get any public repository
+> or any private repo that's owned by the same user/group as the Helm Registry.
 
-Now you've set the Helm Registry repository up, you can begin to integrate this with other repositories
-that contain the Helm charts you wish to publish. Ultimately, this is a simple cURL call.
+Now you've set the Helm Registry repository up, you can begin to integrate this
+with other repositories that contain the Helm charts you wish to publish. Ultimately,
+this is a simple cURL call.
 
 This worked example will use values from
 [gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector](https://gitlab.com/MrSimonEmms/openfaas-amqp1.0-connector).
@@ -191,9 +201,10 @@ curl -f -X POST \
   https://gitlab.com/api/v4/projects/${HELM_REPO_PROJECT_ID}/trigger/pipeline
 ```
 
-This will trigger the `add_helm_chart` job inside the GitLab CI/CD config. After a few minutes, you
-will see a new commit to the `master` branch and then you will find the chart added to the
-`index.yaml` file.
+This will trigger the `add_helm_chart` job inside the GitLab CI/CD config.
+After a few minutes, you will see a new commit to the `master` branch and
+then you will find the chart added to the `index.yaml` file.
 
-That's pretty much all there is to hosting your own Helm Registry in GitLab Pages. Also, this doesn't
-matter if a specific version is added via the trigger multiple times - Helm will manage that for you.
+That's pretty much all there is to hosting your own Helm Registry in GitLab
+Pages. Also, this doesn't matter if a specific version is added via the trigger
+multiple times - Helm will manage that for you.

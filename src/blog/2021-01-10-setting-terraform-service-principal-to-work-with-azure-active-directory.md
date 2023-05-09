@@ -14,24 +14,25 @@ for the record).
 
 Configuring the permissions for a service principal to work with Azure Active
 Directory is a close second. Unlike the symlink though, the documentation for
-this is [dreadful](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs) -
+this is [dreadful](https://registry.terraform.io/providers/hashicorp/azuread/latest/docs);
 all the commands are there, but it's just so verbose and wordy that I always
 miss something.
 
-For anyone just interested in the answer (including Future Simon), the tl;dr
+For anyone just interested in the answer (including Future Simon), the _tl;dr_
 is [here](#how-to-set-it-up)
 
-## What's a Service Principal?
+## What's a Service Principal
 
 From the [Azure documentation](https://docs.microsoft.com/en-us/powershell/azure/create-azure-service-principal-azureps):
 
-> An Azure service principal is an identity created for use with applications, hosted services, and
-> automated tools to access Azure resources. This access is restricted by the roles assigned to the
-> service principal, giving you control over which resources can be accessed and at which level.
-> For security reasons, it's always recommended to use service principals with automated tools
-> rather than allowing them to log in with a user identity.
+> An Azure service principal is an identity created for use with applications, hosted
+> services, and automated tools to access Azure resources. This access is restricted
+> by the roles assigned to the service principal, giving you control over which
+> resources can be accessed and at which level. For security reasons, it's always
+> recommended to use service principals with automated tools rather than allowing
+> them to log in with a user identity.
 
-## What's So Special About Active Directory?
+## What's So Special About Active Directory
 
 In the topology of Azure, the [AzureRM](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 resources and the [AzureAD](https://registry.terraform.io/providers/hashicorp/azuread/latest)
@@ -57,7 +58,7 @@ This is the Identity and Access Management (IAM) page for a subscription. As you
 can see, the "Terraform" Service Principal has the "Owner" role. The
 "Access control (IAM)" blade doesn't exist for the Active Directory.
 
-## Why Would You Ever Want To Mess About With The Active Directory?
+## Why Would You Ever Want To Mess About With The Active Directory
 
 There are plenty of legitimate reasons to work with the Active Directory in
 Terraform. One of my most regular reasons is, when setting up a Kubernetes
@@ -141,17 +142,18 @@ Directory](https://portal.azure.com/?quickstart=True#blade/Microsoft_AAD_IAM/Act
 blade
 - Select your service principal
 - Select "API permissions" from the blade on the left
-- Select "Add a permission" and select the legacy "Azure Active Directory Graph" at
-the very bottom of the page.
-- Under "Delegated permissions", select "Directory.ReadWrite.All" and "Group.ReadWrite.All". Then
-click "Add permissions" to save.
-- Select "Add a permission", select the "Azure Active Directory Directory Graph" again
-- Under "Application permissions", select "Application.ReadWrite.All". Then click "Add permissions"
-to save
+- Select "Add a permission" and select the legacy "Azure Active Directory Graph"
+at the very bottom of the page.
+- Under "Delegated permissions", select "Directory.ReadWrite.All" and
+"Group.ReadWrite.All". Then click "Add permissions" to save.
+- Select "Add a permission", select the "Azure Active Directory Directory Graph"
+again
+- Under "Application permissions", select "Application.ReadWrite.All". Then click
+"Add permissions" to save
 
-That's it. Now when you run `terraform apply`, it will have the permissions to create the
-groups with your desired configuration. Importantly, if you `terraform destroy`, it will
-also have the permissions to delete the configuration.
+That's it. Now when you run `terraform apply`, it will have the permissions to
+create the groups with your desired configuration. Importantly, if you
+`terraform destroy`, it will also have the permissions to delete the configuration.
 
 ### Delegation Permissions
 
