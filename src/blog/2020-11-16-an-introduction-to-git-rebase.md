@@ -6,12 +6,12 @@ excerpt: Git rebase is one of the most complex things to get your head around. B
 tags: git, devops, repository
 ---
 
-> This post assumes some familiarity with Git. This is an advanced concept and shouldn't be tried
-> as your first foray into Git and version control.
+> This post assumes some familiarity with Git. This is an advanced concept and
+> shouldn't be tried as your first foray into Git and version control.
 
-During development on a feature branch, there will be times when we need to update our branch
-because the `master` branch has received an update. In order to keep a linear Git history, avoid
-using the `git merge master` command.
+During development on a feature branch, there will be times when we need to update
+our branch because the `master` branch has received an update. In order to keep
+a linear Git history, avoid using the `git merge master` command.
 
 Having a linear history is more work, but it offers some advantages over a merge:
  - much easier to find the true source of a commit
@@ -34,21 +34,22 @@ git push --force
 
 If there are any issues, you can always use `git rebase --abort`.
 
-## What is Git Rebase?
+## What is Git Rebase
 
 > "This is the way it should have gone"
 
-Git rebase is a way of rewriting your history. At a simple level, it unwinds all your commits to the
-last common commit with your branch, applies the `master` commits and then puts your commits after
-them.
+Git rebase is a way of rewriting your history. At a simple level, it unwinds all
+your commits to the last common commit with your branch, applies the `master`
+commits and then puts your commits after them.
 
-By contrast, `git merge master` would create a merge commit **AFTER** your commits. When your
-feature branch gets promoted to the `master` branch, you will end up with merge commits polluting
-the history.
+By contrast, `git merge master` would create a merge commit **AFTER** your commits.
+When your feature branch gets promoted to the `master` branch, you will end up with
+merge commits polluting the history.
 
 ## Using Git Rebase to squash commits
 
-In a feature branch, there will often be commits in your log like this (`git log --oneline`):
+In a feature branch, there will often be commits in your log like this
+(`git log --oneline`):
 
 ```text
 067c88e gah, I'm stupid. I can see why CI broke
@@ -57,16 +58,17 @@ bf2a09e erm, not sure why CI has broken so another go
 d4193f5 (master) fix(some-fix): some fix
 ```
 
-We've all been there. CI/CD pipelines can be a pain to get right. These commits are fine in a
-feature branch, but we don't want these littering the history in `master` - a feature branch should
-be the work we did, logically separated into "good" commits (it makes finding problems later much,
-much easier).
+We've all been there. CI/CD pipelines can be a pain to get right. These commits
+are fine in a feature branch, but we don't want these littering the history in
+`master` - a feature branch should be the work we did, logically separated into
+"good" commits (it makes finding problems later much, much easier).
 
-> It's a good idea to create a backup branch. With a Git Rebase, you are changing the branch
->irreparably.Run `git checkout -b backup/my-wonderful-feature` to create a backup.
+> It's a good idea to create a backup branch. With a Git Rebase, you are changing
+> the branch irreparably.Run `git checkout -b backup/my-wonderful-feature` to create
+a backup.
 
-Run `git rebase -i HEAD~3` to get the 3 latest commits - the `3` can be changed to anything, but you
-shouldn't go beyond the last common commit (in this case `d4193f5`)
+Run `git rebase -i HEAD~3` to get the 3 latest commits - the `3` can be changed
+to anything, but you shouldn't go beyond the last common commit (in this case `d4193f5`)
 
 This will present an interactive screen that looks like this:
 
@@ -102,8 +104,8 @@ pick 067c88e gah, I'm stupid. I can see why CI broke
 # However, if you remove everything, the rebase will be aborted.
 ```
 
-You can now change your history. In our example, we want to combine all the commits together - this
-is the `fixup` command. Change the file so that it looks like this:
+You can now change your history. In our example, we want to combine all the commits
+together - this is the `fixup` command. Change the file so that it looks like this:
 
 ```text
 pick 7fa9388 (feature/my-wonderful-feature): feat(some-brilliant-feat): this is a brilliant feature I've worked hard on
@@ -111,10 +113,10 @@ f bf2a09e erm, not sure why CI has broken so another go
 f 067c88e gah, I'm stupid. I can see why CI broke
 ```
 
-Now save your changes and exit. If you now look at `git log --oneline`, you will see that only the
-first commit exists. You can now run `git push --force` to replace your remote branch with your
-local branch.
+Now save your changes and exit. If you now look at `git log --oneline`, you will
+see that only the first commit exists. You can now run `git push --force` to replace
+your remote branch with your local branch.
 
-You can also use this method for doing other things. Generally, I find that I use the `pick`, `reword`
-and `fixup` commands the most, although I also find `edit` and `squash` useful for editing my history
-before submitting a change.
+You can also use this method for doing other things. Generally, I find that I use
+the `pick`, `reword` and `fixup` commands the most, although I also find `edit`
+and `squash` useful for editing my history before submitting a change.

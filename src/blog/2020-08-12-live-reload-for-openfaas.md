@@ -8,6 +8,8 @@ tags: kubernetes, docker, devops, containers, openfaas, serverless, functions
 
 > 2020-08-15: Added GoLang example
 
+---
+
 > This article assumes a degree of familiarity with OpenFaaS. I won't be covering
 > how to get started in it or the key concepts in any detail. If you want to
 > get started with it, please see their [excellent documentation](https://docs.openfaas.com/).
@@ -69,17 +71,18 @@ it, that's usually an easy concession to make.
 The OF Watchdog is the modern and (in my opinion) the better watchdog. The function
 runs as a single HTTP endpoint on all methods. It's better because it allows improved
 error handling. However, because it's an application inside the function, we need
-to change how that application works - basically, you need to put a file watcher in
-that restarts the application each time you make a change to the code.
+to change how that application works - basically, you need to put a file watcher
+in that restarts the application each time you make a change to the code.
 
 The important one here is the `fprocess` environment variable. This is the command
 that run the application. For example, in the `node12` template the `fprocess`
 envvar is `node index.js`.
 
-We also need to set the `volumes` and set the `user` to `root`. The reason we have to
-set the `user` to `root` is to be able to install any global dependencies to the container
-at runtime. Even though this is an anti-pattern in a production container, I would argue
-that this is ok in a dev-only container to avoid having to maintain duplicate Dockerfiles.
+We also need to set the `volumes` and set the `user` to `root`. The reason we have
+to set the `user` to `root` is to be able to install any global dependencies to
+the container at runtime. Even though this is an anti-pattern in a production container,
+I would argue that this is ok in a dev-only container to avoid having to maintain
+duplicate Dockerfiles.
 
 ## Secrets
 
@@ -93,23 +96,23 @@ reduce load in the production environment.
 
 ## Getting Started
 
-Let's start by creating a `Makefile` in the root of your project. The purpose of this
-is to be able to easily install all the templates found in the `functions.yml` file.
-Strictly speaking, this is optional, but it makes life a lot easier.
+Let's start by creating a `Makefile` in the root of your project. The purpose of
+this is to be able to easily install all the templates found in the `functions.yml`
+file. Strictly speaking, this is optional, but it makes life a lot easier.
 
 ```Makefile
 FUNC_FILE ?= './functions.yml'
 
 templates:
-	which faas-cli || (echo "Please install 'faas-cli' package" && exit 1)
-	which jq || (echo "Please install 'jq' package" && exit 1)
-	which yq || (echo "Please install 'yq' package" && exit 1)
+  which faas-cli || (echo "Please install 'faas-cli' package" && exit 1)
+  which jq || (echo "Please install 'jq' package" && exit 1)
+  which yq || (echo "Please install 'yq' package" && exit 1)
 
-	$(eval templates := $(shell cat ${FUNC_FILE} | yq r - -j | jq -r '.functions | values[].lang'))
+  $(eval templates := $(shell cat ${FUNC_FILE} | yq r - -j | jq -r '.functions | values[].lang'))
 
-	for template in $(templates) ; do \
-		faas-cli template store pull $$template ; \
-	done
+  for template in $(templates) ; do \
+    faas-cli template store pull $$template ; \
+  done
 .PHONY: templates
 ```
 
@@ -130,7 +133,7 @@ functions: {}
 
 ### Node12
 
-#### functions.yml
+**functions.yml**
 
 ```yaml
 version: 1.0
@@ -143,7 +146,7 @@ functions:
     image: node12:latest
 ```
 
-#### docker-compose.yml
+**docker-compose.yml**
 
 ```yaml
 version: '3.7'
@@ -167,13 +170,13 @@ secrets:
     file: ./secrets/example
 ```
 
-To get live reload in NodeJS we use the [nodemon](https://nodemon.io/) application. If
-you've ever done any NodeJS work, it's incredibly likely that you'll have used nodemon
-as it works really **REALLY** well.
+To get live reload in NodeJS we use the [nodemon](https://nodemon.io/) application.
+If you've ever done any NodeJS work, it's incredibly likely that you'll have used
+nodemon as it works really **REALLY** well.
 
 ### Python3-Flask
 
-#### functions.yml
+**functions.yml**
 
 ```yaml
 version: 1.0
@@ -186,7 +189,7 @@ functions:
     image: python:latest
 ```
 
-#### docker-compose.yml
+**docker-compose.yml**
 
 ```yaml
 version: '3.7'
@@ -212,7 +215,7 @@ for consistency, but it probably isn't actually necessary.
 
 ### GoLang-HTTP
 
-#### functions.yml
+**functions.yml**
 
 ```yaml
 version: 1.0
@@ -225,7 +228,7 @@ functions:
     image: golang-http:latest
 ```
 
-#### docker-compose.yml
+**docker-compose.yml**
 
 ```yaml
 version: '3.7'
@@ -265,5 +268,5 @@ I want to write a version for this for each officially supported OpenFaaS templa
 in the template store. If you want to help with that, please fork the repo and add
 a PR.
 
-GoLang (now done) and CSharp are the ones I'd really like to get done as they seem to be
-fairly popular within the community.
+GoLang (now done) and CSharp are the ones I'd really like to get done as they seem
+to be fairly popular within the community.
