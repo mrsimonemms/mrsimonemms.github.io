@@ -1,1 +1,2 @@
 style 'markdownlint.rb'
+ignore_front_matter true
