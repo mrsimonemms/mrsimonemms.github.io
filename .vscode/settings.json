@@ -3,6 +3,7 @@
     "https://json.schemastore.org/github-workflow.json": [".github/workflows/*.{yml,yaml}"]
   },
   "editor.formatOnSave": true,
+  "editor.rulers": [80],
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
