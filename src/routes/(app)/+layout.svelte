@@ -6,7 +6,7 @@
   const currentYear = new Date().getUTCFullYear();
 </script>
 
-<section class="hero is-large">
+<section class="hero is-medium">
   <div class="hero-head">
     <Navbar />
   </div>
