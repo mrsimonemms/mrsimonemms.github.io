@@ -1,0 +1,11 @@
+diff a/.devcontainer/devcontainer.json b/.devcontainer/devcontainer.json	(rejected hunks)
+@@ -8,7 +8,8 @@
+       "extensions": [
+         "donjayamanne.git-extension-pack",
+         "EditorConfig.EditorConfig",
+-        "waderyan.gitblame"
++        "waderyan.gitblame",
++        "GitHub.vscode-github-actions"
+       ]
+     }
+   },
