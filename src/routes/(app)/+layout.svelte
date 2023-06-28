@@ -35,6 +35,18 @@
         </span>
       </a>
     {/each}
+
+    <a
+      class="has-tooltip-arrow has-tooltip-bottom"
+      href="/rss.xml"
+      target="_blank"
+      data-tooltip="RSS Feed"
+    >
+      <span class="icon is-large has-text-white mx-3">
+        <i class="mdi mdi-24px mdi-rss" />
+      </span>
+    </a>
+
     <hr class="has-background-grey-dark" />
     <div class="is-size-6">
       &copy; {currentYear}
