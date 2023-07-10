@@ -1,6 +1,6 @@
 {
   "template": "https://github.com/mrsimonemms/new",
-  "commit": "521f232e9bc0a1fa7594da6cdf79261d23f68aff",
+  "commit": "3efdc2d2187bd3d625182ef40d2114277abe1379",
   "checkout": null,
   "context": {
     "cookiecutter": {
@@ -10,5 +10,7 @@
     }
   },
   "directory": null,
-  "skip": [".git"]
+  "skip": [
+    ".git"
+  ]
 }
