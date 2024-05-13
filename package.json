@@ -9,7 +9,7 @@
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
     "copy:fonts": "cp -rf node_modules/@mdi/font/fonts ./static",
-    "dev": "vite dev",
+    "dev": "vite dev --host",
     "format": "prettier --plugin-search-dir . --write .",
     "lint": "prettier --plugin-search-dir . --check . && eslint .",
     "postinstall": "patch-package",
