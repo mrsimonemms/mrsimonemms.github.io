@@ -64,7 +64,7 @@ export const cv: ICV = {
     picture: '/img/face-and-hat.jpg',
     email: 'simon@simonemms.com',
     phone: '+44 7736 650058',
-    summary: `An engineer with a wealth of experience in technical leadership, the software development life cycle and implementing a DevOps culture in an existing team. With over a decade of experience building highly scalable software, I can quickly grasp even the most-poorly documented software and communicate solutions to appropriate stakeholders. I am experienced in mentoring junior team members, building up their confidence and skills and providing technical direction to the whole team.`,
+    summary: `An engineer with a wealth of experience in technical leadership, the software development life cycle and implementing a DevOps culture in an existing team. With over 15 years of experience building highly scalable software, I can quickly grasp even the most-poorly documented software and communicate solutions to appropriate stakeholders. I am experienced in mentoring junior team members, building up their confidence and skills and providing technical direction to the whole team.`,
     location: {
       city: 'Telford',
       countryCode: 'UK',
@@ -383,7 +383,7 @@ If you'd like to schedule a live chat, book some time in his diary at https://ca
     },
     {
       name: 'Cloud Providers',
-      keywords: ['AWS', 'Azure', 'DigitalOcean', 'Google Cloud Platform'],
+      keywords: ['AWS', 'Azure', 'DigitalOcean', 'Google Cloud Platform', 'VMware'],
     },
     {
       name: 'Data Stores',
@@ -406,6 +406,23 @@ If you'd like to schedule a live chat, book some time in his diary at https://ca
   ],
 
   work: [
+    {
+      company: 'Bohemia Interactive Simulations',
+      position: 'Lead Platform Engineer',
+      website: 'https://bisimulations.com/',
+      startDate: new Date(2023, 5, 1),
+      endDate: new Date(2024, 5, 7),
+      summary:
+        'Led the development of an Internal Developer Platform for a hybrid cloud/on-prem platform. This platform had several complexities, including global replication of terabytes of data and the use of both Linux and Windows nodes in the cluster. As a defence contractor, the security of this platform was a critical aspect. With the amount of data involved, speed and cost management were crucial metrics.',
+      highlights: [
+        'Provided technical leadership to the Platform team. Engaged with key stakeholders across the organisation to achieve adoption of the Internal Developer Platform. Created a team roadmap to develop new platform capabilities requested by the engineering community.',
+        'Established a DevX Working Group with key influencers from the engineering community. An Internal Developer Platform was a new concept to the organisation, so there was much uncertainty about the value that could be provided.',
+        'Developed relationships with external vendors that resulted in greater value from the products. Through regular calls, I was able to get new features prioritised. By committing to a multi-year contract with our long-term vendors, I achieved a 33% discount.',
+        'Worked with my team to build personal goals and provided mentoring and help so that they could achieve them.',
+        'Worked to upgrade the company to use modern development tooling, such as migrating from Subversion to Git, adoption of GitOps and continuous delivery.',
+      ],
+      skills: ['Kubernetes', 'Helm', 'ArgoCD', 'Developer Experience', 'Leadership', 'VMware'],
+    },
     {
       company: 'Gitpod',
       position: 'Senior Engineer, Self-Hosted',
