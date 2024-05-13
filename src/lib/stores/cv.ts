@@ -152,7 +152,7 @@ smooth playback experience.`,
         'Kubernetes',
         'GitLab',
         'Automation',
-        'MicroServices',
+        'Microservices',
         'Solutions Design',
       ],
     },
@@ -395,7 +395,7 @@ If you'd like to schedule a live chat, book some time in his diary at https://ca
         'Design Patterns',
         'SOLID',
         '12 Factor App',
-        'MicroServices',
+        'Microservices',
         'Agile (Scrum/Kanban)',
       ],
     },
@@ -415,9 +415,9 @@ If you'd like to schedule a live chat, book some time in his diary at https://ca
       summary:
         'Provided the technical leadership for the self-hosted product, working with users to successfully manage over 1,000 installations in the wild',
       highlights: [
-        'Designed and built the Gitpod Installer. This replaced some very unweildly Helm charts with the objective of simplifying the installation experience for both Gitpod and self-hosted users alike. This was a very successful endeavour and launched Gitpod self-hosted into a maintstream product.',
+        'Designed and built the Gitpod Installer. This replaced some very unwieldy Helm chartsto simplify the installation experience for both Gitpod and self-hosted users alike. This was a very successful endeavour and launched Gitpod self-hosted into a mainstream product.',
         "Extended the Gitpod Installer by using Replicated's Kubernetes-Off-The-Shelf (KOTS) to provide a one-click install of Gitpod. This required extensive work with Replicated engineers to extend their product so it would work with the Gitpod Installer.",
-        'Worked with external users to understand their needs from the self-hosted product. This involved developing relationships with key stakeholders at enterprise customers and engaging with the Gitpod community.',
+        'Worked with external users to understand their needs for the self-hosted product. This involved developing relationships with key stakeholders at enterprise customers and engaging with the Gitpod community.',
         'Mentored engineers in my team. This mostly involved unlocking their self-confidence and using my experience to help them solve problems. I was fortunate enough to work with some brilliant humans and was, without doubt, the most exciting part of my role.',
         'Wrote, submitted and delivered talks for various international conferences including KubeCon North America and Cloud Native Rejekts EU.',
       ],
@@ -508,7 +508,7 @@ with third-party development partners.`,
         'Hardware',
         'AWS',
         'Automation',
-        'MicroServices',
+        'Microservices',
       ],
     },
     {
@@ -524,7 +524,7 @@ had to maintain backwards compatibility with the existing website.`,
         `Managed the sprints and the whole agile process. The teams were spread across three
 different locations and, initially, the communication was poor. Improved this by tightening the
 agile disciplines.`,
-        `Encouraged the adoption of microservices for admin processes. Proposed an architectural
+        `Encouraged the adoption of Microservices for admin processes. Proposed an architectural
 design for this solution and implemented it.`,
       ],
       skills: [
