@@ -350,6 +350,42 @@ How else is Simon fantastic? He gravitates towards ambassadorship. How? Here are
 
 If you'd like to schedule a live chat, book some time in his diary at https://calendly.com/simon-emms. You won't regret it. 👋@ Simon. 😀`,
     },
+    {
+      name: 'Liam Bennett',
+      img: '/img/references/liambennett.jpeg',
+      link: 'https://www.linkedin.com/in/liam-bennett-429a8998/',
+      position: 'Engineer',
+      company: 'Gitpod',
+      reference: `Fantastic engineer and person. Very much enjoyed our technical discussions and personal chats. Would work together again in a heartbeat!`,
+    },
+    {
+      name: 'Danny Tipple',
+      img: '/img/references/dannytipple.jpeg',
+      link: 'https://www.linkedin.com/in/danny-tipple-devops/',
+      position: 'Business Lead of DevOps, DevSecOps, Cloud, Platform, SRE talent communities',
+      company: 'Third Republic',
+      reference: `Simon has always had a great reputation as an engineer & person and I have always enjoyed our no BS and honest chats the last few years. Our straight talking nature has made it a real pleasure to work with.
+
+Always happy to share and take my advice (tells me if wrong) plus feedback from any process be that interviewing or interviewer has been stellar. Just an awesome person in the community.`,
+    },
+    {
+      name: 'Herbert Elwood Gilliland III',
+      img: '/img/references/herbgilliland.jpeg',
+      link: 'https://www.linkedin.com/in/herbiii/',
+      position: 'Senior Software Engineer',
+      company: 'Bohemia Interactive Simulations',
+      reference: `Simon was an upstanding, helpful and inquisitive platform lead with Bohemia Interactive Simulations. During our time there, Simon helped steer and improvise changes to a Perforce-to-Git migration of a highly legacy software platform. His advisement on CI/CD, organization standards and policies, and his easy-going and approachable nature makes him a great candidate for leadership positions in organizations that wish to implement strategies for modern continuous integration. Simon possesses a wide array of skillsets in the DevOps, Platforms, Agile, hosting, cloud and administrative capabilities. I recommend any hiring manager give him a close look as he would make a valuable member of any creative team. Simon is also a beekeeper, and he expertly wears flat-caps, making him a stand-out candidate well worth the time to interview.`,
+    },
+    {
+      name: 'Pauline P Narvas',
+      img: '/img/references/paulinenarvas.jpeg',
+      link: 'https://www.linkedin.com/in/pnarvas/',
+      position: 'Head of Community',
+      company: 'Gitpod',
+      reference: `I watched Simon lead the development of one of our key product offerings at Gitpod, and it was really something! Simon is an outstanding technical leader with a deep passion for his work and an exceptional ability to connect with both engineering teams and users of the product.
+
+I feel fortunate to have called Simon my colleague, and would jump at the next opportunity to do it again. Any team would be lucky to have him as a leader and collaborator​!`,
+    },
   ],
 
   skills: [
