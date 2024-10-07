@@ -9,7 +9,7 @@ tags: culture, development, questions
 I am a beekeeper.
 
 This won't be of much surprise to anyone who's spent any time with me, or who
-follows [@TheShroppieBeek](https://twitter.com/theshroppiebeek) on the
+follows [@MrSimonEmms](https://twitter.com/mrsimonemms) on the
 [Information Superhighway](https://en.wikipedia.org/wiki/Information_superhighway).
 I'll bore for England on the subject of beekeeping. One thing beekeepers often
 say to each other is:

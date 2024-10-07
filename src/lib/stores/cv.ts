@@ -87,8 +87,8 @@ export const cv: ICV = {
       },
       {
         network: 'Twitter',
-        username: 'TheShroppieBeek',
-        url: 'https://twitter.com/TheShroppieBeek',
+        username: 'MrSimonEmms',
+        url: 'https://twitter.com/MrSimonEmms',
       },
     ],
   },
