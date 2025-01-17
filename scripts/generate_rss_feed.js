@@ -4,7 +4,7 @@ import { marked } from 'marked';
 import xml from 'xml';
 import { fileURLToPath } from 'url';
 import * as blog from '../src/lib/blog.js';
-import pkg from '../package.json' assert { type: 'json' };
+import pkg from '../package.json' with { type: 'json' };
 
 const domain = process.env.PUBLIC_DOMAIN_NAME;
 const feedName = 'rss.xml';
