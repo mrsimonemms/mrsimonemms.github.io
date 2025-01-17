@@ -443,6 +443,30 @@ I feel fortunate to have called Simon my colleague, and would jump at the next o
 
   work: [
     {
+      company: 'Konstruct',
+      position: 'Senior Platform Engineer',
+      website: 'https://konstruct.io/',
+      startDate: new Date(2024, 5, 1),
+      summary:
+        'Worked to improve the reliability of the Kubefirst platform across all supported cloud providers.',
+      highlights: [
+        'Implemented the Kubefirst platform on Azure.',
+        'Spent time with the community to understand different use-cases and adapt the platform to different requirements.',
+        'Recruited new engineers to the team and worked with them in the early stage to ensure their success.',
+      ],
+      skills: [
+        'AWS',
+        'Azure',
+        'Civo',
+        'Developer Relations',
+        'GCP',
+        'GitOps',
+        'Go',
+        'Kubernetes',
+        'Mentoring',
+      ],
+    },
+    {
       company: 'Bohemia Interactive Simulations',
       position: 'Lead Platform Engineer',
       website: 'https://bisimulations.com/',
