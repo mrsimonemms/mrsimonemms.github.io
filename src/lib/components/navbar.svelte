@@ -40,7 +40,7 @@
     },
     {
       name: 'CV',
-      link: '/cv.pdf',
+      link: '/simonemms_leadengineer_cv.pdf',
       icon: 'mdi-download',
       exactMatch: true,
       newWindow: true,
