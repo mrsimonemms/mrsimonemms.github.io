@@ -113,6 +113,11 @@ He hates talking about himself in the third person.`,
       src: '/img/companies/wealthwizards.png',
       url: 'https://wealthwizards.com',
     },
+    {
+      name: 'Temporal',
+      src: '/img/companies/temporal.png',
+      url: 'https://temporal.io',
+    },
   ],
 
   map: new Map([

@@ -443,10 +443,19 @@ I feel fortunate to have called Simon my colleague, and would jump at the next o
 
   work: [
     {
+      company: 'Temporal Technologies',
+      position: 'Staff Solutions Architect, EMEA',
+      website: 'https://temporal.io',
+      startDate: new Date(2025, 3, 7),
+      summary: 'Helping strategic growth customers adopt Temporal',
+      skills: [],
+    },
+    {
       company: 'Konstruct',
       position: 'Senior Platform Engineer',
       website: 'https://konstruct.io/',
       startDate: new Date(2024, 5, 1),
+      endDate: new Date(2025, 1, 28),
       summary:
         'Worked to improve the reliability of the Kubefirst platform across all supported cloud providers.',
       highlights: [
