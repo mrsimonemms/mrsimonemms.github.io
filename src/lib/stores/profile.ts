@@ -1,9 +1,10 @@
 export const profile = {
-  about: `Simon has been working as a software engineer since 2006, in which time he's done work
-for the likes of Gitpod, DPD, Specsavers, British Pathé, the Red Cross and others. Initially specialising
-in the NodeJS ecosystem, he's used pretty much all of the major languages over the years and since 2017
-has been focused on building DevOps solutions and Cloud-native applications that help engineers to
-work faster and more productively.
+  about: `Simon has been working as a software engineer since 2006, in which time
+he's worked with Temporal, Gitpod, DPD, the Red Cross and others. Initially
+specialising in the NodeJS ecosystem, he's used pretty much all of the major
+languages over the years. Since 2017, he  has been focused on building Cloud
+Native applications that help engineers to work more productively and ship
+faster.
 
 When not behind a computer he's a keen gardener, beekeeper and makes his own sausages.
 
