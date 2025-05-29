@@ -1,6 +1,6 @@
 export const profile = {
   about: `Simon has been working as a software engineer since 2006, in which time
-he's worked with Temporal, Gitpod, DPD, the Red Cross and others. Initially
+he's worked with Temporal, Gitpod, DPD and the Red Cross. Initially
 specialising in the NodeJS ecosystem, he's used pretty much all of the major
 languages over the years. Since 2017, he  has been focused on building Cloud
 Native applications that help engineers to work more productively and ship
