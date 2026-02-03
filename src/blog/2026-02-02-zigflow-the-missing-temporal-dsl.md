@@ -6,7 +6,7 @@ excerpt: What if Temporal workflows were just YAML? Zigflow introduces a declara
 tags: temporal, dsl, zigflow, workflows, yaml, devtools, opensource
 ---
 
-**TL;DR**: [Zigflow](https://zigflow.io?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
+**TL;DR**: [Zigflow](https://zigflow.dev?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
 lets you write Temporal workflows in YAML, so you can focus on what happens
 instead of how to make it reliable.
 
@@ -31,7 +31,7 @@ They loved Temporal for its durability and reliability, but they didn't want
 every workflow change to require an engineer, a code review and a deployment. For
 them, the workflow wasn't the complexity, but the implementation was.
 
-That tension was the spark for [Zigflow](https://zigflow.io?utm_source=simonemms&utm_medium=blog&utm_campaign=intro).
+That tension was the spark for [Zigflow](https://zigflow.dev?utm_source=simonemms&utm_medium=blog&utm_campaign=intro).
 
 ## Temporal is powerful, but there is a learning curve
 
@@ -52,9 +52,9 @@ made reliable.
 
 ## Enter Zigflow
 
-[![Zigflow](/img/blog/zigflow.png)](https://zigflow.io?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
+[![Zigflow](/img/blog/zigflow.png)](https://zigflow.dev?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
 
-[Zigflow](https://zigflow.io?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
+[Zigflow](https://zigflow.dev?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
 is a declarative DSL for Temporal workflows.
 
 Instead of writing your workflow code directly, you describe your workflow in
@@ -140,7 +140,7 @@ Python and update from Java.
 - You're building tooling or platforms on top of Temporal
 
 If any of this resonates, Zigflow is worth a look:
-- 👉 Docs: [zigflow.dev](https://zigflow.io?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
+- 👉 Docs: [zigflow.dev](https://zigflow.dev?utm_source=simonemms&utm_medium=blog&utm_campaign=intro)
 - 👉 Code: [github.com/mrsimonemms/zigflow](https://github.com/mrsimonemms/zigflow)
 
 If you try it and like it, please add a GitHub star. I know it's a bit of a
